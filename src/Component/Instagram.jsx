@@ -25,8 +25,9 @@ class Instagram extends Component {
       return new Promise((resolve) => {
         instagramData().then((data) => {
           this.setState({
-            caption: data.data[16].caption,
-            id: data.data[16].id,
+            // this always take your recent post on instagram
+            caption: data.data[0].caption,
+            id: data.data[0].id,
           });
           const { id } = this.state;
           const mediaFetch = fetch(
